@@ -1,0 +1,6 @@
+vendor
+test.html
+.idea/*
+package-lock.json
+node_modules
+.idea

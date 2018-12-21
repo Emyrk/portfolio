@@ -1,0 +1,3 @@
+package: github.com/Emyrk/portfolio/portfolio-build
+import:
+- package: gopkg.in/yaml.v2

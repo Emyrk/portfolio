@@ -1,4 +1,14 @@
 <HTML>
-{{ template "modal" .}}
+{{range .Projects }}
+
+<br />
+Tile: {{ .Title }}
+<br />
+Description: {{ .Description }}
+<br />
+Tags: {{ .Tags }}
+<br />
+
+{{end}}
 
 </HTML>

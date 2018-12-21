@@ -10,7 +10,8 @@ import (
 
 func main() {
 	var (
-		eg = flag.Bool("eg", false, "Output example project yaml")
+		eg      = flag.Bool("eg", false, "Output example project yaml")
+		outfile = flag.String("out", "test.html", "Output file")
 	)
 
 	flag.Parse()
@@ -20,13 +21,14 @@ func main() {
 		os.Exit(0)
 	}
 
-	BuildIndexPage("test.html")
+	BuildIndexPage(*outfile)
 }
 
 func egYaml() {
 	p := new(Project)
 	p.Title = "HodlZone"
 	p.Description = "Cryptocurrency lending bot service"
+	p.Tags = []string{"Algorithms", "Weekend Hack"}
 
 	data, err := yaml.Marshal(p)
 	if err != nil {

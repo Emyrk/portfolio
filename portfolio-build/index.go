@@ -15,11 +15,21 @@ var _ = yaml.Decoder{}
 type IndexPage struct {
 	Projects     []Project
 	PageMetaData PageMetaData
+	TagList      []string
+	TagListSet   map[string]string
+}
+
+func NewIndexPage() *IndexPage {
+	i := new(IndexPage)
+	i.TagListSet = make(map[string]string)
+
+	return i
 }
 
 type Project struct {
-	Title       string `yaml:"title"`
-	Description string `yaml:"description"`
+	Title       string   `yaml:"title"`
+	Description string   `yaml:"description"`
+	Tags        []string `yaml:"tags"`
 }
 
 type PageMetaData struct {
@@ -28,11 +38,11 @@ type PageMetaData struct {
 }
 
 func BuildState() (*IndexPage, error) {
-	state := new(IndexPage)
+	state := NewIndexPage()
 	projects := make([]Project, 0)
 
 	// Compile projects
-	projectYmls, err := filepath.Glob("*.yml")
+	projectYmls, err := filepath.Glob("_projects/*.yml")
 	if err != nil {
 		return nil, err
 	}
@@ -52,6 +62,13 @@ func BuildState() (*IndexPage, error) {
 		err = yaml.Unmarshal(data, &proj)
 		if err != nil {
 			return nil, err
+		}
+
+		for _, tag := range proj.Tags {
+			if _, ok := state.TagListSet[tag]; !ok {
+				state.TagListSet[tag] = tag
+				state.TagList = append(state.TagList, tag)
+			}
 		}
 
 		projects = append(projects, proj)

@@ -1,14 +1,210 @@
-<HTML>
-{{range .Projects }}
+<!DOCTYPE html>
+<html>
 
-<br />
-Tile: {{ .Title }}
-<br />
-Description: {{ .Description }}
-<br />
-Tags: {{ .Tags }}
-<br />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dean's goofs</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
 
-{{end}}
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</HTML>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab" rel="stylesheet">
+
+    <!-- Bulma Version 0.7.1-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+<section class="hero is-fullheight is-default is-bold hero-bkg-animated">
+
+    <!-- HEADER -->
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="../">
+                        <!-- <img src="../images/bulma.png" alt="Logo"> -->
+                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+                        <span></span>
+                        <span></span>
+                        </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <ul>
+                                <li><a href="https://medium.com/@dmasley">📝 My Writing</a></li>
+                                <li><a href="https://twitter.com/dmasley">💬 My Thoughts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- //HEADER -->
+
+
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+
+                <!-- TAGS CONTAINER -->
+                <div class="column is-2">
+                    {{ range .TagList }}
+                        <a class="tag">
+                            {{ . }}
+                        </a>
+                    {{ end }}
+
+                    <!-- TAGS -->
+                    {{/*<a class="tag">*/}}
+                        {{/*Spotlight*/}}
+                    {{/*</a>*/}}
+                    {{/*<a class="tag">*/}}
+                        {{/*Weekend Hacks*/}}
+                    {{/*</a>*/}}
+                    {{/*<a class="tag">*/}}
+                        {{/*Algorithms*/}}
+                    {{/*</a>*/}}
+                    <!-- //TAGS -->
+
+                </div>
+                <!-- //TAGS CONTAINER -->
+
+
+                <!-- CONTENT CONTAINER -->
+                <div class="column is-9 is-offset-1">
+
+                    <!-- CONTENT -->
+                    <div class="tile is-ancestor">
+                        <div class="tile is-parent">
+                            <div class="tile is-child box">
+                                <p>
+                                    <span class="title">
+                                      Test
+                                    </span>
+                                    <span>
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                      tempor incididunt ut labore et dolore magna aliqua.
+                                    </span>
+                                    <a class="tag is-pulled-right">
+                                        Spotlight
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <div class="tile is-child box">
+                                <p>
+                                    <span class="title">
+                                      Test
+                                    </span>
+                                    <span>
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                      tempor incididunt ut labore et dolore magna aliqua.
+                                    </span>
+                                    <a class="tag is-pulled-right">
+                                        Spotlight
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <div class="tile is-child box">
+                                <p>
+                                    <span class="title">
+                                      Test
+                                    </span>
+                                    <span>
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                      tempor incididunt ut labore et dolore magna aliqua.
+                                    </span>
+                                    <a class="tag is-pulled-right">
+                                        Spotlight
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile is-ancestor">
+                        <div class="tile is-parent">
+                            <div class="tile is-child box">
+                                <p>
+                                    <span class="title">
+                                      Test
+                                    </span>
+                                    <span>
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                      tempor incididunt ut labore et dolore magna aliqua.
+                                    </span>
+                                    <a class="tag is-pulled-right">
+                                        Spotlight
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <div class="tile is-child box">
+                                <p>
+                                    <span class="title">
+                                      Test
+                                    </span>
+                                    <span>
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                      tempor incididunt ut labore et dolore magna aliqua.
+                                    </span>
+                                    <a class="tag is-pulled-right">
+                                        Spotlight
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tile is-parent">
+                            <div class="tile is-child box">
+                                <p>
+                                    <span class="title">
+                                      Test
+                                    </span>
+                                    <span>
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                      tempor incididunt ut labore et dolore magna aliqua.
+                                    </span>
+                                    <a class="tag is-pulled-right">
+                                        Spotlight
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // CONTENT -->
+
+                </div>
+                <!-- //CONTENT CONTAINER -->
+
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-foot">
+        <div class="container">
+            <div class="tabs is-centered">
+                <ul>
+                    <li style="display: inline-block; opacity: .3">
+                        <span><a href="http://deanmasley.com">made with 🍻 by dean</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="_javascript/navbar.js"></script>
+</body>
+</html>

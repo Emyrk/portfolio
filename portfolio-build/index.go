@@ -99,6 +99,24 @@ func BuildIndexPage(outfile string) error {
 	return nil
 }
 
+// Custom funcMap for building the index page
+var funcMap = template.FuncMap{
+	"modN": func(n, v int) int {
+		return v % n
+	},
+	"test": func(item interface{}) (int, error) {
+		return 0, nil
+	},
+}
+
 func parseTemplates(tmplsLoc string) (*template.Template, error) {
-	return template.ParseGlob(tmplsLoc)
+	tmpl := template.Must(template.New("index.html").Funcs(funcMap).ParseGlob(tmplsLoc))
+
+	// Include the main templates
+	//tmpl, err := template.ParseGlob(tmplsLoc)
+	//if err != nil {
+	//	return nil, err
+	//}
+
+	return tmpl, nil
 }

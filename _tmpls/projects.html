@@ -1,0 +1,32 @@
+{{/*The template to manage the project grid*/}}
+{{ define "projects"}}
+    {{ range $index, $element := .Projects }}
+        {{ $m := modN 3 $index }}
+        {{ if eq $m 0 }}
+            {{ if ne $index 0}}
+                </div>
+            {{ end }}
+            <div class="tile is-ancestor">
+        {{ end }}
+
+        <div class="tile is-parent">
+            <div class="tile is-child box">
+                <p>
+                <span class="title">
+                  {{ $element.Title }}
+                </span>
+                <span>
+                  {{ $element.Description }}
+                </span>
+                    {{ range $element.Tags }}
+                    <a class="tag is-pulled-right">
+                        {{ . }}
+                    </a>
+                    {{ end }}
+                </p>
+            </div>
+        </div>
+    {{ end }}
+    </div>
+
+{{ end }}

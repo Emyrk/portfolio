@@ -40,6 +40,14 @@ p span {
     display:none;
 }
 
+.tile.is-ancestor {
+    @include until($tablet) {
+    margin-top: 0 !important;
+  }
+}
+
+
+
 html,
     body {
         font-family: 'Roboto Slab';

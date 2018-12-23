@@ -6586,6 +6586,10 @@ p span {
 .hide {
   display: none; }
 
+@media screen and (max-width: 768px) {
+  .tile.is-ancestor {
+    margin-top: 0 !important; } }
+
 html,
 body {
   font-family: 'Roboto Slab'; }

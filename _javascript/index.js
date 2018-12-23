@@ -5,7 +5,7 @@ $(".tag").on('click', function (event) {
         $(".tag_X").hide()
         return
     }
-    $(".tile.is-child:has(.tag)").css("opacity", 0.5)
+    $(".tile.is-child:has(.tag)").css("opacity", 0.2)
     $(".tile.is-child:has(.tag." + id + ")").css("opacity", 1)
     $(".tag_X").show()
 });

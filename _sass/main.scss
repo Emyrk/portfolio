@@ -28,6 +28,7 @@ $primary-invert: $pink-invert;
 
 
 @import "../node_modules/bulma/bulma";
+@import "hover.scss";
 
 $tag-color: #d6f6ff;
 
@@ -42,12 +43,22 @@ p span {
 html,
     body {
         font-family: 'Roboto Slab';
-        color: white;
     }
+
+.intro-text {
+    text-align: left !important;
+}
 
 .title {
     font-family: 'Raleway';
-    color: white;
+}
+
+.description .title {
+    color: white !important;
+}
+
+.intro-box {
+    margin-top: 6vh;
 }
 
 .box {

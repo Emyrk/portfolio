@@ -6536,11 +6536,12 @@ body {
 
 .box {
   /*min-height: 100px;*/
-  display: flex;
   flex-wrap: wrap;
   align-content: center;
   /* used this for multiple child */
-  align-items: center; }
+  align-items: center;
+  background-size: cover !important;
+  position: relative; }
 
 .tag {
   font-size: 1.25rem !important;
@@ -6548,8 +6549,18 @@ body {
   padding-right: 10px;
   background-color: #d6f6ff !important; }
 
+.tag-box {
+  margin-top: 1rem; }
+
 .tag.is-pulled-right {
-  font-size: 0.75rem !important; }
+  font-size: 0.75rem !important;
+  margin-left: 0.4rem;
+  border: 0.5px solid #209cee3b;
+  box-shadow: 3px 2px #00000030;
+  text-decoration: none !important; }
+
+.description {
+  display: block; }
 
 .hero-bkg-animated {
   /*background: #4a4a4a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23FF475D' fill-opacity='0.14'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat 0 0;*/

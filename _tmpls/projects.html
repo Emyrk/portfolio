@@ -11,19 +11,36 @@
 
         <div class="tile is-parent">
             <div class="tile is-child box" style="background:{{ safeCSS $element.Background }}">
-                <p>
-                <span class="title">
+               
+                <h2 class="title">
                   {{ $element.Title }}
-                </span>
-                <span>
+                </h2>
+
+                <!-- Project Description -->
+                <div>
                   {{ $element.Description }}
-                </span>
+                </div>
+                <!-- //Project Description -->
+
+                <!-- TAG BOX -->
+                <div class="tag-box">
                     {{ range $element.Tags }}
                     <a class="tag is-pulled-right">
                         {{ . }}
                     </a>
                     {{ end }}
-                </p>
+                </div>
+                <!-- //TAG BOX -->
+
+                <!-- MODAL -->
+                <div class="modal">
+                  <div class="modal-background"></div>
+                  <div class="modal-content">
+                    <!-- Any other Bulma elements you want -->
+                  </div>
+                  <button class="modal-close is-large" aria-label="close"></button>
+                </div>
+                <!-- //MODAL -->
             </div>
         </div>
     {{ end }}

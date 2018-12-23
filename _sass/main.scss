@@ -40,28 +40,42 @@ html,
         font-family: 'Roboto Slab';
     }
 
-    .title {
-        font-family: 'Raleway';
-    }
+.title {
+    font-family: 'Raleway';
+}
 
-    .box {
-      /*min-height: 100px;*/
-      display: flex;
-        flex-wrap: wrap;
-        align-content: center; /* used this for multiple child */
-        align-items: center;
-        background-size: cover
-    }
+.box {
+  /*min-height: 100px;*/
+  // display: flex !important;
+    flex-wrap: wrap;
+    align-content: center; /* used this for multiple child */
+    align-items: center;
+    background-size: cover !important;
+    position: relative;
+}
+
 
 .tag {
-	font-size: 1.25rem !important;
-	margin-bottom: 10px;
-	padding-right: 10px;
-	background-color: $tag-color !important;
+font-size: 1.25rem !important;
+margin-bottom: 10px;
+padding-right: 10px;
+background-color: $tag-color !important;
+}
+
+.tag-box {
+    margin-top: 1rem;
 }
 
 .tag.is-pulled-right {
 	font-size: 0.75rem !important;
+    margin-left: 0.4rem;
+    border: 0.5px solid #209cee3b;
+    box-shadow: 3px 2px #00000030;
+    text-decoration: none !important;
+}
+
+.description {
+    display: block;
 }
 
 

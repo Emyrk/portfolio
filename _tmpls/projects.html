@@ -11,36 +11,47 @@
 
         <div class="tile is-parent">
             <div class="tile is-child box" style="background:{{ safeCSS $element.Background }}">
-               
-                <h2 class="title">
-                  {{ $element.Title }}
-                </h2>
+                <div class="gradient"></div>
+                <div class="description">
+                    <h2 class="title">
+                      {{ $element.Title }}
+                    </h2>
 
-                <!-- Project Description -->
-                <div>
-                  {{ $element.Description }}
-                </div>
-                <!-- //Project Description -->
+                    <!-- Project Description -->
+                    <div>
+                      {{ $element.Description }}
+                    </div>
+                    <!-- //Project Description -->
 
-                <!-- TAG BOX -->
-                <div class="tag-box">
-                    {{ range $element.Tags }}
-                    <a class="tag is-pulled-right">
-                        {{ . }}
-                    </a>
-                    {{ end }}
-                </div>
-                <!-- //TAG BOX -->
+                    <!-- TAG BOX -->
+                    <div class="tag-box">
+                        {{ range $element.Tags }}
+                        <a class="tag is-pulled-right">
+                            {{ . }}
+                        </a>
+                        {{ end }}
+                    </div>
+                    <!-- //TAG BOX -->
 
-                <!-- MODAL -->
-                <div class="modal">
-                  <div class="modal-background"></div>
-                  <div class="modal-content">
-                    <!-- Any other Bulma elements you want -->
-                  </div>
-                  <button class="modal-close is-large" aria-label="close"></button>
+                    <!-- MODAL -->
+                    <div class="modal">
+                      <div class="modal-background"></div>
+                      <div class="modal-card">
+                        <header class="modal-card-head">
+                          <p class="modal-card-title">Modal title</p>
+                          <button class="delete" aria-label="close"></button>
+                        </header>
+                        <section class="modal-card-body">
+                          <!-- Content ... -->
+                        </section>
+                        <footer class="modal-card-foot">
+                          <button class="button is-success">Save changes</button>
+                          <button class="button">Cancel</button>
+                        </footer>
+                      </div>
+                    </div>
+                    <!-- //MODAL -->
                 </div>
-                <!-- //MODAL -->
             </div>
         </div>
     {{ end }}

@@ -1,6 +1,6 @@
 $(".tag").on('click', function (event) {
     id = event.target.id;
-    if(id == "tag_X") {
+    if(id === "tag_X") {
         $(".tile.is-child:has(.tag)").css("opacity", 1)
         $(".tag_X").hide()
         return
@@ -11,6 +11,9 @@ $(".tag").on('click', function (event) {
 });
 
 $(".tile.is-child").on('click', function(e) {
+    if ($(this).css("opacity") !== "1") {
+        return
+    }
     if ($(e.target).hasClass("tag")) {
         return
     }

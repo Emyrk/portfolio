@@ -12,3 +12,10 @@ header:
 
 # Title that is shown in the browser tab
 web-title: "Portfolio Site"
+
+# Colors used for tags
+tag-colors:
+  - \#236863
+  - \#462E74
+  - \#AA9B39
+  - \#AA6A39

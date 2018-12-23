@@ -19,6 +19,15 @@
 
     <!-- hover css -->
     <link rel="stylesheet" type="text/css" href="css/hover.css">
+
+    <style>
+        {{ range .TagList }}
+        .tag_{{ uLine .Tag }} {
+            background-color: {{ .Color }} !important;
+        }
+
+        {{ end }}
+    </style>
 </head>
 
 <body>
@@ -74,8 +83,8 @@
                 <!-- TAGS CONTAINER -->
                 <div class="column is-2 is-hidden-mobile">
                     {{ range .TagList }}
-                        <a class="tag tag_{{ uLine . }}" id="tag_{{ uLine . }}">
-                            {{ . }}
+                        <a class="tag tag_{{ uLine .Tag }}" id="tag_{{ uLine .Tag }}">
+                            {{ .Tag }}
                         </a>
                         <br />
                     {{ end }}
@@ -108,8 +117,8 @@
             <div class="columns">
                 <div class="column is-8 is-offset-2">
                     {{ range .TagList }}
-                        <a class="tag tag_{{ uLine . }}" id="tag_{{ uLine . }}">
-                            {{ . }}
+                        <a class="tag tag_{{ uLine .Tag }}" id="tag_{{ uLine .Tag }}">
+                            {{ .Tag }}
                         </a>
                     {{ end }}
                 </div>

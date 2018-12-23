@@ -4,3 +4,5 @@ tags:
 - Algorithms
 - Weekend Hack
 background: "url(media/drone.webp)"
+order: 0
+size: 3

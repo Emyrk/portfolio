@@ -16,10 +16,29 @@ import (
 var _ = yaml.Decoder{}
 
 type IndexPage struct {
-	Projects     []Project
-	PageMetaData PageMetaData
-	TagList      []string
-	TagListSet   map[string]string
+	Projects         []Project
+	ProjectHierarchy [][]Project
+	PageMetaData     PageMetaData
+	TagList          []string
+	TagListSet       map[string]string
+}
+
+func (i *IndexPage) ConstructHierarchy() {
+	counter := 0
+	var arr []Project
+	for _, p := range i.Projects {
+		if counter >= 3 {
+			i.ProjectHierarchy = append(i.ProjectHierarchy, arr)
+			arr = []Project{p}
+			counter = p.Size
+			continue
+		}
+		arr = append(arr, p)
+		counter += p.Size
+	}
+	if len(arr) > 0 {
+		i.ProjectHierarchy = append(i.ProjectHierarchy, arr)
+	}
 }
 
 func NewIndexPage() *IndexPage {
@@ -34,6 +53,8 @@ type Project struct {
 	Description string   `yaml:"description"`
 	Tags        []string `yaml:"tags"`
 	Background  string   `yaml:"background"`
+	Order       int      `yaml:"order"`
+	Size        int      `yaml:"size"`
 }
 
 type PageMetaData struct {
@@ -98,6 +119,10 @@ func BuildState() (*IndexPage, error) {
 			}
 		}
 
+		if proj.Size == 0 {
+			proj.Size = 1
+		}
+
 		projects = append(projects, proj)
 	}
 
@@ -108,6 +133,13 @@ func BuildState() (*IndexPage, error) {
 	sort.SliceStable(state.PageMetaData.Headers, func(i, j int) bool {
 		return state.PageMetaData.Headers[i].Order < state.PageMetaData.Headers[j].Order
 	})
+	// 	Sort Projects
+	sort.SliceStable(state.Projects, func(i, j int) bool {
+		return state.Projects[i].Order < state.Projects[j].Order
+	})
+
+	// Build Hierarchy
+	state.ConstructHierarchy()
 
 	return state, nil
 }
@@ -151,6 +183,9 @@ var funcMap = template.FuncMap{
 	},
 	"uLine": func(s string) string {
 		return strings.Replace(s, " ", "_", -1)
+	},
+	"add": func(a, b int) int {
+		return a + b
 	},
 }
 

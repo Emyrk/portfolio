@@ -6590,6 +6590,10 @@ p span {
   .tile.is-ancestor {
     margin-top: 0 !important; } }
 
+@media screen and (max-width: 768px) {
+  .intro-text {
+    padding-left: 2rem !important; } }
+
 html,
 body {
   font-family: 'Roboto Slab'; }

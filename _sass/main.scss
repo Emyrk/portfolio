@@ -46,7 +46,11 @@ p span {
   }
 }
 
-
+.intro-text {
+    @include until($tablet) {
+        padding-left: 2rem !important;
+    }
+}
 
 html,
     body {

@@ -65,8 +65,14 @@ type Project struct {
 type PageMetaData struct {
 	Title string `yaml:"web-title"`
 	//Description string `yaml:""`
-	Headers   []ProjectHeader `yaml:"header"`
+	Headers   []ProjectHeader `yaml:"navbar-options"`
 	TagColors []string        `yaml:"tag-colors"`
+	Personal  PersonalData    `yaml:"personal"`
+}
+
+type PersonalData struct {
+	Name      string `yaml:"name"`
+	Statement string `yaml:"statement"`
 }
 
 type ProjectHeader struct {

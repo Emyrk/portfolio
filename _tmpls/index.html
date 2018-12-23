@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>dean's goofs</title>
+    <title>{{ .PageMetaData.Title }}</title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
 
     <!-- Font Awesome -->
@@ -39,8 +39,9 @@
                     <div class="navbar-end">
                         <div class="tabs is-right">
                             <ul>
-                                <li><a href="https://medium.com/@dmasley">📝 My Writing</a></li>
-                                <li><a href="https://twitter.com/dmasley">💬 My Thoughts</a></li>
+                                {{ range .PageMetaData.Headers }}
+                                    <li><a href="{{ .Href }}">{{ .Text }}</a></li>
+                                {{ end }}
                             </ul>
                         </div>
                     </div>

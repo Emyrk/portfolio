@@ -1,0 +1,13 @@
+# This is the config for the main project website
+
+# This is the navbar options
+header:
+  - Writing: # This name is not shown on the site anywhere
+    text: "Google!"
+    href: "https://google.com"
+  - Entertainment:
+    text: "Youtube!"
+    href: "https://youtube.com.com"
+
+# Title that is shown in the browser tab
+web-title: "Portfolio Site"

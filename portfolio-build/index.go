@@ -34,13 +34,36 @@ type Project struct {
 }
 
 type PageMetaData struct {
-	Tile        string
-	Description string
+	Title string `yaml:"web-title"`
+	//Description string `yaml:""`
+	Headers []ProjectHeader `yaml:"header"`
+}
+
+type ProjectHeader struct {
+	Text  string `yaml:"text"`
+	Href  string `yaml:"href"`
+	Order int    `yaml:"order"`
 }
 
 func BuildState() (*IndexPage, error) {
 	state := NewIndexPage()
 	projects := make([]Project, 0)
+
+	// Compile Meta Data config
+	file, err := os.OpenFile("_config/index.yml", os.O_RDONLY, 0777)
+	if err != nil {
+		return nil, err
+	}
+
+	data, err := ioutil.ReadAll(file)
+	if err != nil {
+		return nil, err
+	}
+
+	err = yaml.Unmarshal(data, &state.PageMetaData)
+	if err != nil {
+		return nil, err
+	}
 
 	// Compile projects
 	projectYmls, err := filepath.Glob("_projects/*.yml")

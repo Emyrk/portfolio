@@ -59,10 +59,14 @@
                 <!-- TAGS CONTAINER -->
                 <div class="column is-2">
                     {{ range .TagList }}
-                        <a class="tag">
+                        <a class="tag tag_{{ uLine . }}" id="tag_{{ uLine . }}">
                             {{ . }}
                         </a>
+                            <br />
                     {{ end }}
+                    <a class="tag tag_X hide" id="tag_X" style="display:none">
+                        X
+                    </a>
                     <!-- //TAGS -->
 
                 </div>
@@ -99,5 +103,6 @@
 <script type="text/javascript" src="_javascript/navbar.js"></script>
 <!-- JQuery -->
 <script type="text/javascript" src="_javascript/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="_javascript/index.js"></script>
 </body>
 </html>

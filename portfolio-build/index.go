@@ -7,6 +7,8 @@ import (
 	"io/ioutil"
 	"os"
 
+	"strings"
+
 	"gopkg.in/yaml.v2"
 )
 
@@ -139,6 +141,9 @@ var funcMap = template.FuncMap{
 	},
 	"safeHTML": func(s string) template.HTML {
 		return template.HTML(s)
+	},
+	"uLine": func(s string) string {
+		return strings.Replace(s, " ", "_", -1)
 	},
 }
 

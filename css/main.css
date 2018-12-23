@@ -6527,6 +6527,9 @@ label.panel-block {
 p span {
   display: block; }
 
+.hide {
+  display: none; }
+
 html,
 body {
   font-family: 'Roboto Slab';

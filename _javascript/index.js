@@ -1,5 +1,5 @@
-$(".tag").on('click', function (event) {
-    id = event.target.id;
+function tagClick(e) {
+    id = $(this).attr("id");
     if(id === "tag_X") {
         $(".tile.is-child:has(.tag)").css("opacity", 1)
         $(".tag_X").hide()
@@ -8,7 +8,11 @@ $(".tag").on('click', function (event) {
     $(".tile.is-child:has(.tag)").css("opacity", 0.2)
     $(".tile.is-child:has(.tag." + id + ")").css("opacity", 1)
     $(".tag_X").show()
-});
+}
+
+$(".tag_X").on('click', tagClick);
+$(".tag").on('click', tagClick);
+
 
 $(".tile.is-child").on('click', function(e) {
     if ($(this).css("opacity") !== "1") {

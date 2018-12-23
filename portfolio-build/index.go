@@ -19,8 +19,13 @@ type IndexPage struct {
 	Projects         []Project
 	ProjectHierarchy [][]Project
 	PageMetaData     PageMetaData
-	TagList          []string
+	TagList          []Tag
 	TagListSet       map[string]string
+}
+
+type Tag struct {
+	Tag   string `yaml:"yaml"`
+	Color string `yaml:"color"`
 }
 
 func (i *IndexPage) ConstructHierarchy() {
@@ -60,7 +65,8 @@ type Project struct {
 type PageMetaData struct {
 	Title string `yaml:"web-title"`
 	//Description string `yaml:""`
-	Headers []ProjectHeader `yaml:"header"`
+	Headers   []ProjectHeader `yaml:"header"`
+	TagColors []string        `yaml:"tag-colors"`
 }
 
 type ProjectHeader struct {
@@ -95,6 +101,7 @@ func BuildState() (*IndexPage, error) {
 		return nil, err
 	}
 
+	tagColorCounter := 0
 	for _, yml := range projectYmls {
 		var proj Project
 		file, err := os.OpenFile(yml, os.O_RDONLY, 0777)
@@ -114,8 +121,10 @@ func BuildState() (*IndexPage, error) {
 
 		for _, tag := range proj.Tags {
 			if _, ok := state.TagListSet[tag]; !ok {
-				state.TagListSet[tag] = tag
-				state.TagList = append(state.TagList, tag)
+				color := state.PageMetaData.TagColors[tagColorCounter%len(state.PageMetaData.TagColors)]
+				tagColorCounter++
+				state.TagListSet[tag] = color
+				state.TagList = append(state.TagList, Tag{Tag: tag, Color: color})
 			}
 		}
 

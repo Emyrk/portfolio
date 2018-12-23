@@ -6619,7 +6619,8 @@ body {
   font-size: 1.25rem !important;
   margin-bottom: 10px;
   padding-right: 10px;
-  background-color: #d6f6ff !important; }
+  background-color: #d6f6ff !important;
+  color: white !important; }
 
 .tag-box {
   margin-top: 1rem; }

@@ -5,3 +5,8 @@ tags:
 - Weekend Hack
 - Spotlight
 background: url(media/intro.webp)
+# Order is sorted on all projects
+order: 1
+
+# Default size, takes whatever space is available
+size: 1

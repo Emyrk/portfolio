@@ -1,61 +1,60 @@
 {{/*The template to manage the project grid*/}}
 {{ define "projects"}}
-    {{ range $index, $element := .Projects }}
-        {{ $m := modN 3 $index }}
-        {{ if eq $m 0 }}
-            {{ if ne $index 0}}
-                </div>
-            {{ end }}
-            <div class="tile is-ancestor">
-        {{ end }}
 
-        <div class="tile is-parent">
-            <div class="tile is-child box" style="background:{{ safeCSS $element.Background }}">
-                <div class="gradient"></div>
-                <div class="description">
-                    <h2 class="title">
-                      {{ $element.Title }}
-                    </h2>
-
-                    <!-- Project Description -->
-                    <div>
-                      {{ $element.Description }}
-                    </div>
-                    <!-- //Project Description -->
-
-                    <!-- TAG BOX -->
-                    <div class="tag-box">
-                        {{ range $element.Tags }}
-                        <a class="tag is-pulled-right tag_{{ uLine . }}" id="tag_{{ uLine . }}">
-                            {{ . }}
-                        </a>
-                        {{ end }}
-                    </div>
-                    <!-- //TAG BOX -->
-                </div>
-
-                <!-- MODAL -->
-                <div class="modal"> <!-- activate by clicking card -->
-                  <div class="modal-background"></div> <!-- click to disable -->
-                  <div class="modal-card">
-                    <header class="modal-card-head">
-                      <p class="modal-card-title">Modal title</p>
-                      <button class="delete" aria-label="close"></button> <!-- click to disable -->
-                    </header>
-                    <section class="modal-card-body">
-                      <!-- Content ... -->
-                    </section>
-                    <footer class="modal-card-foot">
-                      <button class="button is-success">Save changes</button>
-                      <button class="button">Cancel</button>
-                    </footer>
-                  </div>
-                </div>
-                <!-- //MODAL -->
-
+    {{ range $index, $projects := .ProjectHierarchy }}
+        {{ if ne $index 0}}
             </div>
-        </div>
+        {{ end }}
+        <div class="tile is-ancestor">
+        {{ range $pi, $element := $projects }}
+            <div class="tile is-parent">
+                <div class="tile is-child box" style="background:{{ safeCSS $element.Background }}">
+                    <div class="gradient"></div>
+                    <div class="description">
+                        <h2 class="title">
+                          {{ $element.Title }}
+                        </h2>
+
+                        <!-- Project Description -->
+                        <div>
+                          {{ $element.Description }}
+                        </div>
+                        <!-- //Project Description -->
+
+                        <!-- TAG BOX -->
+                        <div class="tag-box">
+                            {{ range $element.Tags }}
+                            <a class="tag is-pulled-right tag_{{ uLine . }}" id="tag_{{ uLine . }}">
+                                {{ . }}
+                            </a>
+                            {{ end }}
+                        </div>
+                        <!-- //TAG BOX -->
+                    </div>
+
+                    <!-- MODAL -->
+                    <div class="modal"> <!-- activate by clicking card -->
+                      <div class="modal-background"></div> <!-- click to disable -->
+                      <div class="modal-card">
+                        <header class="modal-card-head">
+                          <p class="modal-card-title">Modal title</p>
+                          <button class="delete" aria-label="close"></button> <!-- click to disable -->
+                        </header>
+                        <section class="modal-card-body">
+                          <!-- Content ... -->
+                        </section>
+                        <footer class="modal-card-foot">
+                          <button class="button is-success">Save changes</button>
+                          <button class="button">Cancel</button>
+                        </footer>
+                      </div>
+                    </div>
+                    <!-- //MODAL -->
+
+                </div>
+            </div>
+            {{ end }}
     {{ end }}
-    </div>
+        </div>
 
 {{ end }}

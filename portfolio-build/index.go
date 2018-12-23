@@ -86,7 +86,7 @@ func BuildIndexPage(outfile string) error {
 		return err
 	}
 
-	out, err := os.OpenFile(outfile, os.O_CREATE|os.O_RDWR, 0777)
+	out, err := os.OpenFile(outfile, os.O_TRUNC|os.O_CREATE|os.O_RDWR, 0777)
 	if err != nil {
 		return err
 	}

@@ -24,7 +24,7 @@
                         <!-- TAG BOX -->
                         <div class="tag-box">
                             {{ range $element.Tags }}
-                            <a class="tag is-pulled-right tag_{{ uLine . }}" id="tag_{{ uLine . }}">
+                            <a class="hvr-bob tag is-pulled-right tag_{{ uLine . }}" id="tag_{{ uLine . }}">
                                 {{ . }}
                             </a>
                             {{ end }}
@@ -38,7 +38,7 @@
                       <div class="modal-card">
                         <header class="modal-card-head">
                           <p class="modal-card-title">Modal title</p>
-                          <button class="delete" aria-label="close"></button> <!-- click to disable -->
+                          <button class="delete modal-delete" aria-label="close"></button> <!-- click to disable -->
                         </header>
                         <section class="modal-card-body">
                           <!-- Content ... -->

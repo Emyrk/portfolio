@@ -30,6 +30,7 @@ type Project struct {
 	Title       string   `yaml:"title"`
 	Description string   `yaml:"description"`
 	Tags        []string `yaml:"tags"`
+	Background  string   `yaml:"background"`
 }
 
 type PageMetaData struct {
@@ -106,6 +107,15 @@ var funcMap = template.FuncMap{
 	},
 	"test": func(item interface{}) (int, error) {
 		return 0, nil
+	},
+	"safeCSS": func(s string) template.CSS {
+		return template.CSS(s)
+	},
+	"safeJS": func(s string) template.JS {
+		return template.JS(s)
+	},
+	"safeHTML": func(s string) template.HTML {
+		return template.HTML(s)
 	},
 }
 

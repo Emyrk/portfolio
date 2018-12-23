@@ -3,6 +3,7 @@ package main
 import (
 	"html/template"
 	"path/filepath"
+	"sort"
 
 	"io/ioutil"
 	"os"
@@ -101,6 +102,12 @@ func BuildState() (*IndexPage, error) {
 	}
 
 	state.Projects = projects
+
+	// Sort sortable objects
+	//	Sort Headers
+	sort.SliceStable(state.PageMetaData.Headers, func(i, j int) bool {
+		return state.PageMetaData.Headers[i].Order < state.PageMetaData.Headers[j].Order
+	})
 
 	return state, nil
 }

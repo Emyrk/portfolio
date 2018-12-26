@@ -1,8 +1,27 @@
 
 .markdown{
-	&h1{
+	& h1{
 		font-weight: bold !important;
 		font-size: 2rem !important;
-		background: red;
+	}
+
+	& h2 {
+		font-size: 1.75rem !important;
+	}
+
+	& h3 {
+		font-size: 1.5rem !important;
+		font-weight: bold !important;
+	}
+
+	& h4 {
+		font-size: 1.20rem !important;
+		font-weight: bold !important;
+	}
+
+	& ul {
+		list-style: disc outside !important;
+		    margin-left: 2em !important;
+		    margin-top: 1em !important;
 	}
 }

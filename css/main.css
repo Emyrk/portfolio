@@ -6580,10 +6580,25 @@ label.panel-block {
   -webkit-animation-direction: normal, alternate;
   animation-direction: normal, alternate; }
 
-.markdownh1 {
+.markdown h1 {
   font-weight: bold !important;
-  font-size: 2rem !important;
-  background: red; }
+  font-size: 2rem !important; }
+
+.markdown h2 {
+  font-size: 1.75rem !important; }
+
+.markdown h3 {
+  font-size: 1.5rem !important;
+  font-weight: bold !important; }
+
+.markdown h4 {
+  font-size: 1.20rem !important;
+  font-weight: bold !important; }
+
+.markdown ul {
+  list-style: disc outside !important;
+  margin-left: 2em !important;
+  margin-top: 1em !important; }
 
 p span {
   display: block; }

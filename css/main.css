@@ -6580,6 +6580,11 @@ label.panel-block {
   -webkit-animation-direction: normal, alternate;
   animation-direction: normal, alternate; }
 
+.markdownh1 {
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  background: red; }
+
 p span {
   display: block; }
 

@@ -10,6 +10,7 @@ import (
 
 	"strings"
 
+	"gopkg.in/russross/blackfriday.v2"
 	"gopkg.in/yaml.v2"
 )
 
@@ -54,12 +55,14 @@ func NewIndexPage() *IndexPage {
 }
 
 type Project struct {
-	Title       string   `yaml:"title"`
-	Description string   `yaml:"description"`
-	Tags        []string `yaml:"tags"`
-	Background  string   `yaml:"background"`
-	Order       int      `yaml:"order"`
-	Size        int      `yaml:"size"`
+	Title        string   `yaml:"title"`
+	Description  string   `yaml:"description"`
+	Tags         []string `yaml:"tags"`
+	Background   string   `yaml:"background"`
+	Order        int      `yaml:"order"`
+	Size         int      `yaml:"size"`
+	MarkdownFile string   `yaml:"md-file"`
+	TileHTML     string
 }
 
 type PageMetaData struct {
@@ -141,6 +144,24 @@ func BuildState() (*IndexPage, error) {
 		if proj.Size == 0 {
 			proj.Size = 1
 		}
+
+		// Fetch and parse markdown
+		md, err := os.Open(proj.MarkdownFile)
+		if os.IsNotExist(err) {
+			projects = append(projects, proj)
+			continue
+		}
+		if err != nil {
+			return nil, err
+		}
+
+		data, err = ioutil.ReadAll(md)
+		if err != nil {
+			return nil, err
+		}
+
+		mark := blackfriday.Run(data)
+		proj.TileHTML = string(mark)
 
 		projects = append(projects, proj)
 	}

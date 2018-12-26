@@ -6,3 +6,4 @@ tags:
 background: "url(media/drone.webp)"
 order: 0
 size: 3
+md-file: _tiles/default.md

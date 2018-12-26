@@ -82,6 +82,10 @@ type PageMetaData struct {
 		Href string `yaml:"href"`
 		Text string `yaml:"text"`
 	} `yaml:"footer"`
+	Background struct {
+		Color string `yaml:"color"`
+		Url   string `yaml:"url"`
+	}
 }
 
 type PersonalData struct {

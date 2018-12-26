@@ -6594,6 +6594,10 @@ p span {
   .intro-text {
     padding-left: 2rem !important; } }
 
+@media screen and (min-width: 769px) {
+  .modal-card {
+    width: 65vw; } }
+
 html,
 body {
   font-family: 'Roboto Slab'; }

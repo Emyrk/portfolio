@@ -53,6 +53,12 @@ p span {
     }
 }
 
+.modal-card{
+    @include from($tablet) {
+        width: 65vw;
+    }
+}
+
 html,
     body {
         font-family: 'Roboto Slab';

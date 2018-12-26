@@ -38,12 +38,14 @@
     <!-- hover css -->
     <link rel="stylesheet" type="text/css" href="css/hover.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
     <style>
         {{ range .TagList }}
         .tag_{{ uLine .Tag }} {
             background-color: {{ .Color }} !important;
         }
-
         {{ end }}
 
       .hero-bkg-animated {
@@ -109,18 +111,18 @@
     <div class="hero-body">
         <div class="container">
             <div class="columns is-vcentered">
-
                 <!-- TAGS CONTAINER -->
                 <div class="column is-2 is-hidden-mobile">
+                    <a class="tag_X hide" id="tag_X" style="color: black; font-size:2em;">
+                        <i class="fas fa-undo"></i>
+                    </a>
+                    <br />
                     {{ range .TagList }}
                         <a class="tag tag_{{ uLine .Tag }}" id="tag_{{ uLine .Tag }}">
                             {{ .Tag }}
                         </a>
                         <br />
                     {{ end }}
-                    <a class="tag tag_X hide" id="tag_X" style="display:none">
-                        X
-                    </a>
                     <!-- //TAGS -->
 
                 </div>
@@ -161,7 +163,7 @@
             <div class="tabs is-centered">
                 <ul>
                     <li style="display: inline-block; opacity: .3">
-                        <span><a href="http://deanmasley.com">made with 🍻 by dean</a></span>
+                        <span><a href="{{ .PageMetaData.Footer.Href }}">{{ .PageMetaData.Footer.Text }}</a></span>
                     </li>
                 </ul>
             </div>

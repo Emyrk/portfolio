@@ -68,6 +68,10 @@ type PageMetaData struct {
 	Headers   []ProjectHeader `yaml:"navbar-options"`
 	TagColors []string        `yaml:"tag-colors"`
 	Personal  PersonalData    `yaml:"personal"`
+	Footer    struct {
+		Href string `yaml:"href"`
+		Text string `yaml:"text"`
+	} `yaml:"footer"`
 }
 
 type PersonalData struct {

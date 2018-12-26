@@ -10,3 +10,14 @@ order: 1
 
 # Default size, takes whatever space is available
 size: 1
+
+# Modal content
+md-file: _tiles/default.md
+modal-buttons:
+- text: "Youtube"
+  href: "https://youtube.com"
+  extraclass: ""
+- text: "Google"
+  href: "https://google.com"
+  extra-classes: "is-success"
+

@@ -29,6 +29,7 @@ func egYaml() {
 	p.Title = "HodlZone"
 	p.Description = "Cryptocurrency lending bot service"
 	p.Tags = []string{"Algorithms", "Weekend Hack"}
+	p.ModalButtons = []ModalButton{{"x", "x", "x"}}
 
 	data, err := yaml.Marshal(p)
 	if err != nil {

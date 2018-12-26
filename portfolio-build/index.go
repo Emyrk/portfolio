@@ -63,6 +63,13 @@ type Project struct {
 	Size         int      `yaml:"size"`
 	MarkdownFile string   `yaml:"md-file"`
 	TileHTML     string
+	ModalButtons []ModalButton `yaml:"modal-buttons"`
+}
+
+type ModalButton struct {
+	Text         string `yaml:"text"`
+	Href         string `yaml:"href"`
+	ExtraClasses string `yaml:"extra-classes"`
 }
 
 type PageMetaData struct {

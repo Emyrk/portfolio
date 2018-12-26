@@ -7,3 +7,10 @@ background: "url(media/drone.webp)"
 order: 0
 size: 3
 md-file: _tiles/default.md
+modal-buttons:
+- text: "Youtube"
+  href: "https://youtube.com"
+  extraclass: ""
+- text: "Google"
+  href: "https://google.com"
+  extra-classes: "is-success"

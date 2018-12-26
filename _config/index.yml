@@ -23,3 +23,7 @@ tag-colors:
   - \#462E74
   - \#AA9B39
   - \#AA6A39
+
+footer:
+  href: "https://github.com/Emyrk/portfolio"
+  text: "Created from the Masley Bro template"

@@ -1,0 +1,4 @@
+package: github.com/Emyrk/portfolio
+import:
+- package: gopkg.in/russross/blackfriday.v2
+- package: gopkg.in/yaml.v2

@@ -32,6 +32,9 @@
             background-color: {{ .Color }} !important;
         }
         {{ end }}
+        .tag_X {
+            background-color: grey !important;
+        }
 
         .hero-bkg-animated {
             background-color: {{ safeCSS .PageMetaData.Background.Color }};
@@ -103,8 +106,9 @@
             <div class="columns is-vcentered">
                 <!-- TAGS CONTAINER -->
                 <div class="column is-2 is-hidden-mobile">
-                    <a class="tag_X hide" id="tag_X" style="color: black; font-size:2em;">
-                        <i class="fas fa-undo"></i>
+                    <a class="tag tag_X hide" id="tag_X">
+                        Show All
+                        <!-- <i class="fas fa-undo"></i> -->
                     </a>
                     <br />
                     {{ range .TagList }}

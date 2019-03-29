@@ -1,25 +1,24 @@
-title: Apollo Codes
-description: Code education tool
+title: Cryptid
+description: Decentralized identity verification system.
 tags:
 - Hackathon
 - Hackathon Winner
-- Weekend Hack
+- Blockchain
+- Spotlight
 background: url(media/intro.webp)
 # Order is sorted on all projects
-order: 5
+order: 6
 
 # Default size, takes whatever space is available
 size: 1
 
 # Modal content
-md-file: _tiles/apollo.md
+md-file: _tiles/cryptid.md
 modal-buttons:
-- text: "Demo"
-  href: "http://apollo.codes/"
 - text: "Devpost"
-  href: "https://devpost.com/software/test-nij70v"
+  href: "https://devpost.com/software/cryptid"
   extraclass: ""
 - text: "Github"
-  href: "https://github.com/split-learning/NodeSite"
+  href: "https://github.com/CryptidID"
   extra-classes: "is-success"
 

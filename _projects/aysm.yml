@@ -9,5 +9,5 @@ size: 3
 md-file: _tiles/asymtp.md
 modal-buttons:
 - text: "Demo"
-  href: "http://stevenmasley.com/totp"
+  href: "http://stevenmasley.me/totp"
   extraclass: "is-success"

@@ -10,7 +10,7 @@ An asymmetric one time password solution that would replace the existing symmetr
 
 ## Existing Solution
 
-TOTP stands for "____ One Time Password" and is often used as a 2nd factor authentication for login. Google Authenticator is a very common TOTP app that generates these one time passwords that are valid for a certain period of time. This common method however is symmetric. This means that the private seed that is used on your phone, is also stored on the remote server. Any compromised server would render the 2nd factor authentication useless.
+TOTP stands for "Time-based One Time Password" and is often used as a 2nd factor authentication for login. Google Authenticator is a very common TOTP app that generates these one time passwords that are valid for a certain period of time. This common method however is symmetric. This means that the private seed that is used on your phone, is also stored on the remote server. Any compromised server would render the 2nd factor authentication useless.
 
 ## Asymmetric Alternative
 

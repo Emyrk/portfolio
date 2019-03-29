@@ -1,0 +1,24 @@
+title: Apollo Codes
+description: Code education tool
+tags:
+- Hackathon
+- Weekend Hack
+background: url(media/intro.webp)
+# Order is sorted on all projects
+order: 5
+
+# Default size, takes whatever space is available
+size: 1
+
+# Modal content
+md-file: _tiles/apollo.md
+modal-buttons:
+- text: "Demo"
+  href: "http://apollo.codes/"
+- text: "Devpost"
+  href: "https://devpost.com/software/test-nij70v"
+  extraclass: ""
+- text: "Github"
+  href: "https://github.com/split-learning/NodeSite"
+  extra-classes: "is-success"
+

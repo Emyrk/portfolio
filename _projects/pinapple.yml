@@ -1,0 +1,22 @@
+title: Pinapple
+description: Peer to peer file shareing in browser
+tags:
+- Hackathon
+- Weekend Hack
+background: url(media/intro.webp)
+# Order is sorted on all projects
+order: 6
+
+# Default size, takes whatever space is available
+size: 1
+
+# Modal content
+md-file: _tiles/pinapple.md
+modal-buttons:
+- text: "Devpost"
+  href: "https://devpost.com/software/pinapple"
+  extraclass: ""
+- text: "Github"
+  href: "https://github.com/Emyrk/Pinapple"
+  extra-classes: "is-success"
+

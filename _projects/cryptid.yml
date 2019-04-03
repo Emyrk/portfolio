@@ -1,0 +1,24 @@
+title: Cryptid
+description: Decentralized identity verification system.
+tags:
+- Hackathon
+- Hackathon Winner
+- Blockchain
+- Spotlight
+background: url(media/intro.webp)
+# Order is sorted on all projects
+order: 6
+
+# Default size, takes whatever space is available
+size: 1
+
+# Modal content
+md-file: _tiles/cryptid.md
+modal-buttons:
+- text: "Devpost"
+  href: "https://devpost.com/software/cryptid"
+  extraclass: ""
+- text: "Github"
+  href: "https://github.com/CryptidID"
+  extra-classes: "is-success"
+

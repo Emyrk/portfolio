@@ -1,23 +1,22 @@
-title: Random Project
-description: Just a Project
+title: HodlZone
+description: Cryptocurrency lending bot service
 tags:
 - Algorithms
-- Weekend Hack
 - Spotlight
 background: url(media/intro.webp)
 # Order is sorted on all projects
-order: 100
+order: 1
 
 # Default size, takes whatever space is available
 size: 1
 
 # Modal content
-md-file: _tiles/default.md
+md-file: _tiles/hodlzone.md
 modal-buttons:
-- text: "Youtube"
-  href: "https://youtube.com"
+- text: "Live Site"
+  href: "https://hodl.zone"
   extraclass: ""
-- text: "Google"
-  href: "https://google.com"
+- text: "Github"
+  # href: "https://github.com/Emyrk/LendingBot"
   extra-classes: "is-success"
 

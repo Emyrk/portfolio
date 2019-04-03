@@ -1,0 +1,22 @@
+title: Coin Raffle
+description: Blockchain based coin raffle
+tags:
+- Algorithms
+- Weekend Hack
+background: url(media/intro.webp)
+# Order is sorted on all projects
+order: 5
+
+# Default size, takes whatever space is available
+size: 1
+
+# Modal content
+md-file: _tiles/coin-raffle.md
+modal-buttons:
+- text: "Results"
+  href: "https://factomize.com/forums/threads/factom%C2%AE-memorabilia-coin-raffle-draw-12-2019-02-16-final-draw.1649/page-3#post-12614"
+  extraclass: ""
+- text: "Github"
+  href: "https://github.com/Emyrk/coin-raffle"
+  extra-classes: "is-success"
+
